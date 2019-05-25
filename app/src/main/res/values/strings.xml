@@ -1,0 +1,147 @@
+<resources>
+    <string name="app_name" translatable="false">GPSeed</string>
+    <string name="passEncryption" translatable="false">framirez1234</string>
+    <string name="folder_raiz" translatable="false">Gpseed</string>
+    <string name="folder_Image" translatable="false">Gpseed/Images</string>
+    <string name="name_Image_temp" translatable="false">temp</string>
+    <string name="name_Image_logo" translatable="false">logo</string>
+    <string name="send_to" translatable="false">com.whatsapp</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_map" translatable="false">Map</string>
+    <string name="title_activity_home" translatable="false">Home</string>
+    <string name="title_home" translatable="false">Home</string>
+    <string name="title_dashboard" translatable="false">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="notificaciones_biblicas">Biblical notifications</string>
+    <string name="App" translatable="false">App</string>
+    <string name="Vibrar">Vibrate</string>
+    <string name="recurrencia">Recurrence</string>
+    <string name="hora">Hora</string>
+    <string name="palabra">Word of God</string>
+    <string name="palabra_del_dia">Word of the day</string>
+    <string name="enlace_app_store">You do not have gpseed yet? download it here:\n\t\t\t\t\t\t↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\nhttps://play.google.com/store/apps/details?id=com.far.gpseed</string>
+    <string name="titulo_press_url">\n\nClick on this link to get the location:\n\t\t\t\t\t\t↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\n</string>
+
+    <string name="v1">You will keep in perfect peace those whose minds are steadfast, because they trust in you. @Isaiah 26:3</string>
+    <string name="v10">Whoever can be trusted with very little can also be trusted with much, and whoever is dishonest with very little will also be dishonest with much. @Luke 16:10</string>
+    <string name="v11">The righteous person may have many troubles, but the Lord delivers him from them all;  @Psalm 34:19</string>
+    <string name="v12">For I am the Lord your God who takes hold of your right hand and says to you, Do not fear; I will help you. @Isaiah 41:13</string>
+    <string name="v13">And I will do whatever you ask in my name, so that the Father may be glorified in the Son. 14 You may ask me for anything in my name, and I will do it. @John 14:13,14</string>
+    <string name="v14">The Lord will fight for you; you need only to be still. @Exodus 14:14</string>
+    <string name="v15">When you were dead in your sins and in the uncircumcision of your flesh, God made you alive with Christ. He forgave us all our sins, having canceled the charge of our legal indebtedness, which stood against us and condemned us; he has taken it away, nailing it to the cross. And having disarmed the powers and authorities, he made a public spectacle of them, triumphing over them by the cross. @Colossians 2:13-15</string>
+    <string name="v16">Peter and the other apostles replied: We must obey God rather than human beings! @Acts 5:29</string>
+    <string name="v17">Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go. @Joshua 1:9</string>
+    <string name="v18">The Lord will vindicate me; your love, Lord, endures forever— do not abandon the works of your hands. @Psalm 138:8</string>
+    <string name="v19">When he had gone indoors, the blind men came to him, and he asked them, “Do you believe that I am able to do this?” “Yes, Lord,” they replied. Then he touched their eyes and said, “According to your faith let it be done to you”; @Matthew 9:28,29</string>
+    <string name="v2">God is not human, that he should lie, not a human being, that he should change his mind. Does he speak and then not act? Does he promise and not fulfill? @Numbers 23:19</string>
+    <string name="v20">On hearing this, Jesus said, “It is not the healthy who need a doctor, but the sick. But go and learn what this means: ‘I desire mercy, not sacrifice.’ For I have not come to call the righteous, but sinners.” @Matthew 9:12,13</string>
+    <string name="v21">Overhearing what they said, Jesus told him, “Don’t be afraid; just believe.” @Mark 5:36</string>
+    <string name="v22">Dear friend, do not imitate what is evil but what is good. Anyone who does what is good is from God. Anyone who does what is evil has not seen God. @3 John 1:11</string>
+    <string name="v23">Jesus replied, “What is impossible with man is possible with God.” @Luke 18:27</string>
+    <string name="v24">say to those with fearful hearts, “Be strong, do not fear; your God will come, he will come with vengeance; with divine retribution he will come to save you.” @Isaiah 35:4</string>
+    <string name="v25">Be still before the Lord and wait patiently for him; do not fret when people succeed in their ways, when they carry out their wicked schemes. @Psalm 37:7</string>
+    <string name="v26">Surely you know how it has been from of old, ever since mankind was placed on the earth, that the mirth of the wicked is brief, the joy of the godless lasts but a moment. @Job 20:4,5</string>
+    <string name="v27">Stop judging by mere appearances, but instead judge correctly. @John 7:24</string>
+    <string name="v28">Your enemies will be clothed in shame, and the tents of the wicked will be no more.” @Job 8:22</string>
+    <string name="v29">You will lie down, with no one to make you afraid, and many will court your favor. @Job 11:19</string>
+    <string name="v3">They are surprised that you do not join them in their reckless, wild living, and they heap abuse on you. But they will have to give account to him who is ready to judge the living and the dead. @1 Peter 4:4,5</string>
+    <string name="v30">You will know that your tent is secure; you will take stock of your property and find nothing missing. @Job 5:24</string>
+    <string name="v31">‘Call to me and I will answer you and tell you great and unsearchable things you do not know.’ @Jeremiah 33:3</string>
+    <string name="v32">Jesus replied, “You do not realize now what I am doing, but later you will understand.” @John 13:7</string>
+    <string name="v33">For you know the grace of our Lord Jesus Christ, that though he was rich, yet for your sake he became poor, so that you through his poverty might become rich. @2 Corinthians 8:9</string>
+    <string name="v34">But who can discern their own errors? Forgive my hidden faults. @Psalm 19:12</string>
+    <string name="v35">For who is God besides the Lord? And who is the Rock except our God?  @Psalm 18:31</string>
+    <string name="v36">As for God, his way is perfect: The Lord’s word is flawless; he shields all who take refuge in him. @Psalm 18:30</string>
+    <string name="v37">Therefore this is what the Lord says: “If you repent, I will restore you that you may serve me; if you utter worthy, not worthless, words, you will be my spokesman. Let this people turn to you, but you must not turn to them. @Jeremiah 15:19</string>
+    <string name="v38">Woe to the world because of the things that cause people to stumble! Such things must come, but woe to the person through whom they come! @Matthew 18:7</string>
+    <string name="v39">Jesus answered, “It is written: ‘Man shall not live on bread alone.’” @Luke 4:4</string>
+    <string name="v4">The grace of our Lord was poured out on me abundantly, along with the faith and love that are in Christ Jesus. @1 Timothy 1:14</string>
+    <string name="v40">Let us hold unswervingly to the hope we profess, for he who promised is faithful. @Hebrews 10:23</string>
+    <string name="v41">For everything God created is good, and nothing is to be rejected if it is received with thanksgiving, because it is consecrated by the word of God and prayer. @1 Timothy 4:4,5</string>
+    <string name="v42">He says, “Be still, and know that I am God; I will be exalted among the nations, I will be exalted in the earth.”  @Psalm 46:10</string>
+    <string name="v43">If anyone, then, knows the good they ought to do and doesn’t do it, it is sin for them. @James 4:17</string>
+    <string name="v44">Therefore, I tell you, her many sins have been forgiven—as her great love has shown. But whoever has been forgiven little loves little. @Luke 7:47</string>
+    <string name="v45">“Two people owed money to a certain moneylender. One owed him five hundred denarii, and the other fifty. Neither of them had the money to pay him back, so he forgave the debts of both. Now which of them will love him more?” Simon replied, “I suppose the one who had the bigger debt forgiven.” “You have judged correctly,” Jesus said. @Luke 7:41-43</string>
+    <string name="v46">Yet a time is coming and has now come when the true worshipers will worship the Father in the Spirit and in truth, for they are the kind of worshipers the Father seeks. @John 4:23</string>
+    <string name="v47">The world and its desires pass away, but whoever does the will of God lives forever. @1 John 2:17</string>
+    <string name="v48">Jesus replied, “No one who puts a hand to the plow and looks back is fit for service in the kingdom of God.” @Luke 9:62</string>
+    <string name="v49">There are six things the Lord hates, seven that are detestable to him: haughty eyes, a lying tongue, hands that shed innocent blood, a heart that devises wicked schemes, feet that are quick to rush into evil, a false witness who pours out lies and a person who stirs up conflict in the community. @Proverbs 6:16-19</string>
+    <string name="v5">I thank Christ Jesus our Lord, who has given me strength, that he considered me trustworthy, appointing me to his service. 13 Even though I was once a blasphemer and a persecutor and a violent man, I was shown mercy because I acted in ignorance and unbelief. @1 Timothy 1:12,13</string>
+    <string name="v50">“Two things I ask of you, Lord; do not refuse me before I die: Keep falsehood and lies far from me; give me neither poverty nor riches, but give me only my daily bread. Otherwise, I may have too much and disown you and say, ‘Who is the Lord?’ Or I may become poor and steal, and so dishonor the name of my God. @Proverbs 30:7-9</string>
+    <string name="v51">It is my pleasure to tell you about the miraculous signs and wonders that the Most High God has performed for me. @Daniel 4:2</string>
+    <string name="v52">See to it that no one takes you captive through hollow and deceptive philosophy, which depends on human tradition and the elemental spiritual forces of this world rather than on Christ. For in Christ all the fullness of the Deity lives in bodily form, and in Christ you have been brought to fullness. He is the head over every power and authority. @Colossians 2:8-10</string>
+    <string name="v53">For the kingdom of God is not a matter of eating and drinking, but of righteousness, peace and joy in the Holy Spirit.  @Romans 14:17</string>
+    <string name="v54">Do not be afraid, little flock, for your Father has been pleased to give you the kingdom. @Luke 12:32</string>
+    <string name="v55">The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace. @Numbers 6:24-26</string>
+    <string name="v56">After this I looked, and there before me was a great multitude that no one could count, from every nation, tribe, people and language, standing before the throne and before the Lamb. They were wearing white robes and were holding palm branches in their hands. And they cried out in a loud voice: “Salvation belongs to our God, who sits on the throne, and to the Lamb.” @Revelation 7:9,10</string>
+    <string name="v57">Hearing this, Jesus said to Jairus, “Don’t be afraid; just believe, and she will be healed.” @Luke 8:50</string>
+    <string name="v58">So he said to me, “This is the word of the Lord to Zerubbabel: ‘Not by might nor by power, but by my Spirit,’ says the Lord Almighty. @Zechariah 4:6</string>
+    <string name="v59">And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus. @Philippians 4:7</string>
+    <string name="v6">The Lord himself goes before you and will be with you; he will never leave you nor forsake you. Do not be afraid; do not be discouraged.” @Deuteronomy 31:8</string>
+    <string name="v60">But our citizenship is in heaven. And we eagerly await a Savior from there, the Lord Jesus Christ, who, by the power that enables him to bring everything under his control, will transform our lowly bodies so that they will be like his glorious body. @Philippians 3:20,21</string>
+    <string name="v61">Jesus Christ is the same yesterday and today and forever. @Hebrews 13:8</string>
+    <string name="v62">My sheep listen to my voice; I know them, and they follow me. I give them eternal life, and they shall never perish; no one will snatch them out of my hand. @John 10:27,28</string>
+    <string name="v63">For the Lord is righteous, he loves justice; the upright will see his face.  @Psalm 11:7</string>
+    <string name="v64">Consider how the wild flowers grow. They do not labor or spin. Yet I tell you, not even Solomon in all his splendor was dressed like one of these. If that is how God clothes the grass of the field, which is here today, and tomorrow is thrown into the fire, how much more will he clothe you—you of little faith!  @Luke 12:27,28</string>
+    <string name="v65">For we do not have a high priest who is unable to empathize with our weaknesses, but we have one who has been tempted in every way, just as we are—yet he did not sin. @Hebrews 4:15</string>
+    <string name="v66">A man with leprosy came and knelt before him and said, “Lord, if you are willing, you can make me clean.” Jesus reached out his hand and touched the man. “I am willing,” he said. “Be clean!” Immediately he was cleansed of his leprosy. @Matthew 8:2,3</string>
+    <string name="v67">Do not be afraid of them; the Lord your God himself will fight for you.” @Deuteronomy 3:22</string>
+    <string name="v68">the Lord delights in those who fear him, who put their hope in his unfailing love. @Psalm 147:11</string>
+    <string name="v69">Do your best to present yourself to God as one approved, a worker who does not need to be ashamed and who correctly handles the word of truth. @2 Timothy 2:15</string>
+    <string name="v7">Trust in the Lord forever, for the Lord, the Lord himself, is the Rock eternal. @Isaiah 26:4</string>
+    <string name="v70">So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand. @Isaiah 41:10</string>
+    <string name="v71">And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus. @Philippians 4:7</string>
+    <string name="v72">I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing. @John 15:5</string>
+    <string name="v73">Be patient, then, brothers and sisters, until the Lord’s coming. See how the farmer waits for the land to yield its valuable crop, patiently waiting for the autumn and spring rains. @James 5:7</string>
+    <string name="v74">No, in all these things we are more than conquerors through him who loved us. @Romans 8:37</string>
+    <string name="v75">It is mine to avenge; I will repay. In due time their foot will slip; their day of disaster is near and their doom rushes upon them.” @Deuteronomy 32:35</string>
+    <string name="v76">And no wonder, for Satan himself masquerades as an angel of light. It is not surprising, then, if his servants also masquerade as servants of righteousness. Their end will be what their actions deserve. @2 Corinthians 11:14,15</string>
+    <string name="v77">Nothing in all creation is hidden from God’s sight. Everything is uncovered and laid bare before the eyes of him to whom we must give account. @Hebrews 4:13</string>
+    <string name="v78">So, if you think you are standing firm, be careful that you don’t fall! No temptation has overtaken you except what is common to mankind. And God is faithful; he will not let you be tempted beyond what you can bear. But when you are tempted, he will also provide a way out so that you can endure it. @1 Corinthians 10:12,13</string>
+    <string name="v79">You make known to me the path of life; you will fill me with joy in your presence, with eternal pleasures at your right hand. @Psalm 16:11</string>
+    <string name="v8">This is what the Lord says: “Restrain your voice from weeping and your eyes from tears, for your work will be rewarded,” declares the Lord. “They will return from the land of the enemy. @Jeremiah 31:16</string>
+    <string name="v80">No one will be able to stand against you all the days of your life. As I was with Moses, so I will be with you; I will never leave you nor forsake you. @Joshua 1:5</string>
+    <string name="v81">You will keep in perfect peace those whose minds are steadfast, because they trust in you. @Isaiah 26:3</string>
+    <string name="v82">But you are a chosen people, a royal priesthood, a holy nation, God’s special possession, that you may declare the praises of him who called you out of darkness into his wonderful light. Once you were not a people, but now you are the people of God; once you had not received mercy, but now you have received mercy. @1 Peter 2:9,10</string>
+    <string name="v9">May the Lord answer you when you are in distress; may the name of the God of Jacob protect you. May he send you help from the sanctuary and grant you support from Zion. May he remember all your sacrifices and accept your burnt offerings. May he give you the desire of your heart and make all your plans succeed. @Psalm 20:1,4</string>
+
+    <string name="nuevo">New</string>
+    <string name="seeds">Seeds</string>
+    <string name="coordenadas">Coordinates</string>
+    <string name="msg_nogps">Please activate phone location and try again.</string>
+    <string name="msg_presshere">(Click here)</string>
+    <string name="latitude">Latitude:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="cancel">Cancel</string>
+    <string name="share">Share</string>
+    <string name="photo">Photo</string>
+    <string name="save">Save</string>
+    <string name="location_name">Location name</string>
+    <string name="new_seed">New seed</string>
+    <string name="back">Back</string>
+    <string name="msg_saved">Saved successfully</string>
+    <string name="more">More</string>
+    <string name="map">Map</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="edited">Edited</string>
+    <string name="deleted">Deleted</string>
+    <string name="driving">Driving</string>
+    <string name="walking">Walking</string>
+    <string name="daily">Daily</string>
+    <string name="weekly">Weekly</string>
+    <string name="hour">Hour</string>
+    <string name="msg_fallo_intentando">Failed to find location. Trying again</string>
+    <string name="msg_noesposible">It is not possible to obtain your current position. try again</string>
+    <string name="msg_obteniendogps">Obtaining position ...</string>
+    <string name="msg_debeaceptarpermisos">You must accept the Permissions. Press \n↓</string>
+    <string name="msg_error_recibiendoinfo">Error receiving information. incomplete information</string>
+    <string name="saved">Saved</string>
+    <string name="msg_permissionscamera">You must accept the permissions to use the camera</string>
+    <string name="msg_permissionshare">You must accept permissions to share</string>
+    <string name="msg_permissonsviewimagen">You must accept the permissions to view images</string>
+    <string name="msg_nogooglemap">You do not have Google Map yet. Download it and try again</string>
+    <string name="exit">Exit</string>
+</resources>

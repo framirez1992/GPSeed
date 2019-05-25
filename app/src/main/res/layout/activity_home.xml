@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.far.gpseed.Home">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/grey_800">
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout android:id="@+id/llSeed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="60dp"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout android:id="@+id/llSearchingLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <ProgressBar android:id="@+id/pbSeed"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:visibility="invisible"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"/>
+
+            <TextView android:id="@+id/tvMensaje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text=""/>
+
+                </LinearLayout>
+
+        <LinearLayout android:id="@+id/llMsgNoLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:visibility="invisible">
+
+            <ImageView android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/no_location"
+                android:tint="@color/grey_500"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="@string/msg_nogps"
+                android:textColor="@color/grey_300"/>
+
+            </LinearLayout>
+
+            </RelativeLayout>
+
+
+                <ImageView android:id="@+id/btnGetLocation"
+                    android:layout_width="@dimen/seedSize"
+                    android:layout_height="@dimen/seedSize"
+                    android:background="@mipmap/seed"
+                    android:elevation="10dp"/>
+
+
+
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/msg_presshere"
+                android:gravity="center"
+                android:textColor="@color/grey_300"/>
+
+
+            <LinearLayout android:id="@+id/llSeedOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:visibility="invisible">
+
+
+                <LinearLayout android:id="@+id/btnCancelar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:minWidth="50dp">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="20dp"
+                        android:backgroundTint="@color/red_500">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@mipmap/cancel"
+                            android:layout_gravity="center"/>
+                    </android.support.v7.widget.CardView>
+                    <TextView android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/cancel"
+                        android:textColor="@color/grey_300"
+                        android:textSize="10sp"
+                        android:paddingTop="5dp"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout android:id="@+id/btnShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:minWidth="50dp">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="20dp"
+                        android:backgroundTint="@color/cyan_500">
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:src="@mipmap/share"
+                            android:layout_gravity="center"/>
+                    </android.support.v7.widget.CardView>
+                    <TextView android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/share"
+                        android:textColor="@color/grey_300"
+                        android:textSize="10sp"
+                        android:paddingTop="5dp"/>
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout android:id="@+id/btnFoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:minWidth="50dp">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="20dp">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@mipmap/photo"
+                            android:layout_gravity="center"/>
+                    </android.support.v7.widget.CardView>
+                    <TextView android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/photo"
+                        android:textColor="@color/grey_300"
+                        android:textSize="10sp"
+                        android:paddingTop="5dp"/>
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout android:id="@+id/btnGuardar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:minWidth="50dp">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="20dp"
+                        android:backgroundTint="@color/colorPrimary">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@mipmap/save"
+                            android:layout_gravity="center"/>
+                    </android.support.v7.widget.CardView>
+                    <TextView android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/save"
+                        android:textColor="@color/grey_300"
+                        android:textSize="10sp"
+                        android:paddingTop="5dp"/>
+
+                </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        <LinearLayout android:id="@+id/llMySeeds"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp"
+            android:visibility="gone">
+
+
+            <GridView android:id="@+id/gvMySeeds"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="auto_fit"
+                android:columnWidth="100dp"
+                android:verticalSpacing="10dp"
+                android:horizontalSpacing="10dp"/>
+
+
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llSettings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="15dp"
+                tools:context="com.example.far.ordr.Configuration">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="@string/App"
+                    android:textColor="@color/grey_300"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/vibrar_ico"
+                            android:tint="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/Vibrar"
+                            android:textColor="@color/grey_300" />
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/cbActivarVibracion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="35dp"
+                        android:buttonTint="@color/colorAccent" />
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.12"
+                    android:background="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="@string/notificaciones_biblicas"
+                    android:textColor="@color/grey_300"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/bible"
+                            android:tint="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/notificaciones_biblicas"
+                            android:textColor="@color/grey_300" />
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/cbActivarNotificaciones"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:buttonTint="@color/colorAccent" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/recurrencia_ico"
+                            android:tint="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/recurrencia"
+                            android:textColor="@color/grey_300" />
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/spnRecurencia"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:backgroundTint="@color/grey_300" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/clock"
+                            android:tint="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/hora"
+                            android:textColor="@color/grey_300" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnDialogoHora"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="@color/colorAccent"
+                        android:layout_gravity="right"
+                        android:src="@drawable/clock"
+                        android:text="."
+                        android:textSize="13sp" />
+                </TableRow>
+
+                <Button
+                    android:id="@+id/btnAceptar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorAccent"
+                    android:text="@string/save" />
+
+            </TableLayout>
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:itemIconTint="@drawable/bottomnavbarbackground"
+        app:itemTextColor="@drawable/bottomnavbarbackground"
+        android:background="@color/grey_900"
+        app:menu="@menu/navigation"/>
+
+</LinearLayout>

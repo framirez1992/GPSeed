@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="titulo_press_url">\n\nPresiona este enlace para obtener la ubicacion:\n\t\t\t\t\t\t↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\n</string>
+    <string name="enlace_app_store">Aun no tienes gpseed? descargalo aqui:\n\t\t\t\t\t\t↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\nhttps://play.google.com/store/apps/details?id=com.far.gpseed</string>
+    <string name="hora">Hora</string>
+    <string name="notificaciones_biblicas">Notificaciones bíblicas</string>
+    <string name="palabra">Palabra de Dios</string>
+    <string name="palabra_del_dia">Palabra del dia</string>
+    <string name="recurrencia">Recurrencia</string>
+    <string name="Vibrar">Vibrar</string>
+    <string name="action_settings">Configuración</string>
+    <string name="nuevo">Nuevo</string>
+    <string name="seeds">Semillas</string>
+    <string name="coordenadas">Coodenadas</string>
+    <string name="msg_nogps">Por favor active la ubicación del teléfono e intente de nuevo.</string>
+    <string name="msg_presshere">(Presiona aquí)</string>
+    <string name="latitude">Latitud:</string>
+    <string name="longitude">Longitud:</string>
+    <string name="cancel">Cancelar</string>
+    <string name="share">Compartir</string>
+    <string name="photo">Foto</string>
+    <string name="save">Guardar</string>
+    <string name="location_name">Nombre de la ubicación</string>
+    <string name="new_seed">Nueva semilla</string>
+    <string name="back">Atrás</string>
+    <string name="msg_saved">Guardado exitosamente</string>
+    <string name="more">Más</string>
+    <string name="map">Mapa</string>
+    <string name="delete">Eliminar</string>
+    <string name="edit">Editar</string>
+    <string name="edited">Editado</string>
+    <string name="deleted">Borrado</string>
+    <string name="driving">Conduciendo</string>
+    <string name="walking">Caminando</string>
+    <string name="daily">Diario</string>
+    <string name="weekly">Semanal</string>
+    <string name="hour">Hora</string>
+    <string name="title_notifications">Notificaciones</string>
+    <string name="msg_fallo_intentando">Falló encontrando su ubicación. Intentando de nuevo</string>
+    <string name="msg_noesposible">No es posible obtener su posición actual. intente de nuevo</string>
+    <string name="msg_obteniendogps">Obteniendo posición...</string>
+    <string name="msg_debeaceptarpermisos">Debe aceptar los Permisos. Presione \n↓</string>
+    <string name="msg_error_recibiendoinfo">Error recibiendo información. informacion incompleta</string>
+    <string name="saved">Guardado</string>
+    <string name="msg_permissionscamera">Debe aceptar los permisos para usar la cámara</string>
+    <string name="msg_permissionshare">Debe aceptar los permisos para compartir</string>
+    <string name="msg_permissonsviewimagen">Debes aceptar los permisos para visualizar imágenes</string>
+    <string name="msg_nogooglemap">Aún no tienes Google Map. Descargarlo e intenta otra vez</string>
+    <string name="exit">Salir</string>
+
+    <string name="v1">Tú guardarás en completa paz a aquel cuyo pensamiento en ti persevera; porque en ti ha confiado.
+     @Isaías 26:3</string>
+    <string name="v2">Dios no es hombre, para que mienta,
+        Ni hijo de hombre para que se arrepienta.
+        El dijo, ¿y no hará?
+        Habló, ¿y no lo ejecutará?
+        @Números 23:19</string>
+    <string name="v3">A éstos les parece cosa extraña que vosotros no corráis con ellos en el mismo desenfreno de disolución, y os ultrajan; pero ellos darán cuenta al que está preparado para juzgar a los vivos y a los muertos.
+@1 Pedro 4:4,5</string>
+    <string name="v4">Pero la gracia de nuestro Señor fue más abundante con la fe y el amor que es en Cristo Jesús.
+@1 Timoteo 1:14</string>
+    <string name="v5">Doy gracias al que me fortaleció, a Cristo Jesús nuestro Señor, porque me tuvo por fiel, poniéndome en el ministerio, habiendo yo sido antes blasfemo, perseguidor e injuriador; mas fui recibido a misericordia porque lo hice por ignorancia, en incredulidad.
+@1 Timoteo 1:12,13</string>
+    <string name="v6">Y Jehová va delante de ti; él estará contigo, no te dejará, ni te desamparará; no temas ni te intimides.
+@Deuteronomio 31:8</string>
+    <string name="v7">Confiad en Jehová perpetuamente, porque en Jehová el Señor está la fortaleza de los siglos.
+@Isaías 26:4</string>
+    <string name="v8">Así ha dicho Jehová: Reprime del llanto tu voz, y de las lágrimas tus ojos; porque salario hay para tu trabajo, dice Jehová, y volverán de la tierra del enemigo. @Jeremías 31:16</string>
+    <string name="v9">Jehová te oiga en el día de conflicto;
+El nombre del Dios de Jacob te defienda.
+ Te envíe ayuda desde el santuario,
+Y desde Sion te sostenga. Haga memoria de todas tus ofrendas,
+Y acepte tu holocausto.
+ Te dé conforme al deseo de tu corazón,
+Y cumpla todo tu consejo.
+@Salmos 20:1-4</string>
+    <string name="v10">El que es fiel en lo muy poco, también en lo más es fiel; y el que en lo muy poco es injusto, también en lo más es injusto.
+@Lucas 16:10</string>
+    <string name="v11">Muchas son las aflicciones del justo,
+Pero de todas ellas le librará Jehová.
+@Salmos 34:19</string>
+    <string name="v12">Porque yo Jehová soy tu Dios, quien te sostiene de tu mano derecha, y te dice: No temas, yo te ayudo.
+ @Isaías 41:13</string>
+    <string name="v13">Y todo lo que pidiereis al Padre en mi nombre, lo haré, para que el Padre sea glorificado en el Hijo. Si algo pidiereis en mi nombre, yo lo haré.
+@Juan 14:13,14</string>
+    <string name="v14">Jehová peleará por vosotros, y vosotros estaréis tranquilos.
+@Éxodo 14:14</string>
+    <string name="v15">Y a vosotros, estando muertos en pecados y en la incircuncisión de vuestra carne, os dio vida juntamente con él, perdonándoos todos los pecados, anulando el acta de los decretos que había contra nosotros, que nos era contraria, quitándola de en medio y clavándola en la cruz, y despojando a los principados y a las potestades, los exhibió públicamente, triunfando sobre ellos en la cruz.
+@Colosenses 2:13-15</string>
+    <string name="v16">Respondiendo Pedro y los apóstoles, dijeron: Es necesario obedecer a Dios antes que a los hombres.
+@Hechos 5:29</string>
+    <string name="v17">Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en donde quiera que vayas.
+@Josué 1:9</string>
+    <string name="v18">Jehová cumplirá su propósito en mí;
+Tu misericordia, oh Jehová, es para siempre;
+No desampares la obra de tus manos.
+@Salmos 138:8</string>
+    <string name="v19">Y llegado a la casa, vinieron a él los ciegos; y Jesús les dijo: ¿Creéis que puedo hacer esto? Ellos dijeron: Sí, Señor.
+ Entonces les tocó los ojos, diciendo: Conforme a vuestra fe os sea hecho. @Mateo 9:28,29</string>
+    <string name="v20">Al oír esto Jesús, les dijo: Los sanos no tienen necesidad de médico, sino los enfermos. Id, pues, y aprended lo que significa: Misericordia quiero, y no sacrificio. Porque no he venido a llamar a justos, sino a pecadores, al arrepentimiento.
+@Mateo 9:12,13</string>
+    <string name="v21">Pero Jesús, luego que oyó lo que se decía, dijo al principal de la sinagoga: No temas, cree solamente.
+@Marcos 5:36</string>
+    <string name="v22">Amado, no imites lo malo, sino lo bueno. El que hace lo bueno es de Dios; pero el que hace lo malo, no ha visto a Dios.
+@3 Juan 1:11</string>
+    <string name="v23">El les dijo: Lo que es imposible para los hombres, es posible para Dios.
+@Lucas 18:27</string>
+    <string name="v24">Decid a los de corazón apocado: Esforzaos, no temáis; he aquí que vuestro Dios viene con retribución, con pago; Dios mismo vendrá, y os salvará.
+@Isaías 35:4</string>
+    <string name="v25">Guarda silencio ante Jehová, y espera en él.
+No te alteres con motivo del que prospera en su camino,
+Por el hombre que hace maldades.
+@Salmos 37:7</string>
+    <string name="v26">¿No sabes esto, que así fue siempre,
+Desde el tiempo que fue puesto el hombre sobre la tierra, Que la alegría de los malos es breve,
+Y el gozo del impío por un momento?
+@Job 20:4,5</string>
+    <string name="v27">No juzguéis según las apariencias, sino juzgad con justo juicio.
+@Juan 7:24</string>
+    <string name="v28">Los que te aborrecen serán vestidos de confusión;
+Y la habitación de los impíos perecerá.
+@Job 8:22</string>
+    <string name="v29">Te acostarás, y no habrá quien te espante; Y muchos suplicarán tu favor.
+@Job 11:19</string>
+    <string name="v30">Sabrás que hay paz en tu tienda;
+Visitarás tu morada, y nada te faltará. @Job 5:24</string>
+    <string name="v31">Clama a mí, y yo te responderé, y te enseñaré cosas grandes y ocultas que tú no conoces. @Jeremías 33:3</string>
+    <string name="v32">Respondió Jesús y le dijo: Lo que yo hago, tú no lo comprendes ahora; mas lo entenderás después.
+@Juan 13:7</string>
+    <string name="v33">Porque ya conocéis la gracia de nuestro Señor Jesucristo, que por amor a vosotros se hizo pobre, siendo rico, para que vosotros con su pobreza fueseis enriquecidos.
+@2 Corintios 8:9</string>
+    <string name="v34">¿Quién podrá entender sus propios errores?
+Líbrame de los que me son ocultos.
+@Salmos 19:12</string>
+    <string name="v35">Porque ¿quién es Dios sino sólo Jehová?
+¿Y qué roca hay fuera de nuestro Dios? @Salmos 18:31</string>
+    <string name="v36">En cuanto a Dios, perfecto es su camino,
+Y acrisolada la palabra de Jehová;
+Escudo es a todos los que en él esperan.
+@Salmos 18:30</string>
+    <string name="v37">Por tanto, así dijo Jehová: Si te convirtieres, yo te restauraré, y delante de mí estarás; y si entresacares lo precioso de lo vil, serás como mi boca. Conviértanse ellos a ti, y tú no te conviertas a ellos.
+@Jeremías 15:19</string>
+    <string name="v38">¡Ay del mundo por los tropiezos! porque es necesario que vengan tropiezos, pero ¡ay de aquel hombre por quien viene el tropiezo! @Mateo 18:7</string>
+    <string name="v39">Jesús, respondiéndole, dijo: Escrito está: No sólo de pan vivirá el hombre, sino de toda palabra de Dios.
+@Lucas 4:4</string>
+    <string name="v40">Mantengamos firme, sin fluctuar, la profesión de nuestra esperanza, porque fiel es el que prometió.
+@Hebreos 10:23</string>
+    <string name="v41">Porque todo lo que Dios creó es bueno, y nada es de desecharse, si se toma con acción de gracias; porque por la palabra de Dios y por la oración es santificado.
+@1 Timoteo 4:4,5</string>
+    <string name="v42">Estad quietos, y conoced que yo soy Dios;
+Seré exaltado entre las naciones; enaltecido seré en la tierra.
+@Salmos 46:10</string>
+    <string name="v43">y al que sabe hacer lo bueno, y no lo hace, le es pecado.
+@Santiago 4:17</string>
+    <string name="v44">Por lo cual te digo que sus muchos pecados le son perdonados, porque amó mucho; mas aquel a quien se le perdona poco, poco ama.
+@Lucas 7:47</string>
+    <string name="v45">Un acreedor tenía dos deudores: el uno le debía quinientos denarios, y el otro cincuenta; y no teniendo ellos con qué pagar, perdonó a ambos. Di, pues, ¿cuál de ellos le amará más?Respondiendo Simón, dijo: Pienso que aquel a quien perdonó más. Y él le dijo: Rectamente has juzgado.
+@Lucas 7:41-43</string>
+    <string name="v46">Mas la hora viene, y ahora es, cuando los verdaderos adoradores adorarán al Padre en espíritu y en verdad; porque también el Padre tales adoradores busca que le adoren. @Juan 4:23</string>
+    <string name="v47">Y el mundo pasa, y sus deseos; pero el que hace la voluntad de Dios permanece para siempre.
+@1 Juan 2:17</string>
+    <string name="v48">Y Jesús le dijo: Ninguno que poniendo su mano en el arado mira hacia atrás, es apto para el reino de Dios. @Lucas 9:62</string>
+    <string name="v49">Seis cosas aborrece Jehová,
+Y aun siete abomina su alma: Los ojos altivos, la lengua mentirosa,
+Las manos derramadoras de sangre inocente, El corazón que maquina pensamientos inicuos,
+Los pies presurosos para correr al mal, El testigo falso que habla mentiras,
+Y el que siembra discordia entre hermanos.
+@Proverbios 6:16-19</string>
+    <string name="v50">Dos cosas te he demandado;
+No me las niegues antes que muera: Vanidad y palabra mentirosa aparta de mí; No me des pobreza ni riquezas;
+Manténme del pan necesario; No sea que me sacie, y te niegue, y diga: ¿Quién es Jehová?
+O que siendo pobre, hurte, Y blasfeme el nombre de mi Dios.
+@Proverbios 30:7-9</string>
+    <string name="v51">Conviene que yo declare las señales y milagros que el Dios Altísimo ha hecho conmigo.
+@Daniel 4:2</string>
+    <string name="v52">Mirad que nadie os engañe por medio de filosofías y huecas sutilezas, según las tradiciones de los hombres, conforme a los rudimentos del mundo, y no según Cristo. Porque en él habita corporalmente toda la plenitud de la Deidad, y vosotros estáis completos en él, que es la cabeza de todo principado y potestad.
+@Colosenses 2:8-10</string>
+    <string name="v53">porque el reino de Dios no es comida ni bebida, sino justicia, paz y gozo en el Espíritu Santo.
+@Romanos 14:17</string>
+    <string name="v54">No temáis, manada pequeña, porque a vuestro Padre le ha placido daros el reino.
+@Lucas 12:32</string>
+    <string name="v55">Jehová te bendiga, y te guarde; Jehová haga resplandecer su rostro sobre ti, y tenga de ti misericordia; Jehová alce sobre ti su rostro, y ponga en ti paz. @Números 6:24-26</string>
+    <string name="v56">Después de esto miré, y he aquí una gran multitud, la cual nadie podía contar, de todas naciones y tribus y pueblos y lenguas, que estaban delante del trono y en la presencia del Cordero, vestidos de ropas blancas, y con palmas en las manos; y clamaban a gran voz, diciendo: La salvación pertenece a nuestro Dios que está sentado en el trono, y al Cordero.
+@Apocalipsis 7:9,10</string>
+    <string name="v57">Oyéndolo Jesús, le respondió: No temas; cree solamente, y será salva.
+@Lucas 8:50</string>
+    <string name="v58">Entonces respondió y me habló diciendo: Esta es palabra de Jehová a Zorobabel, que dice: No con ejército, ni con fuerza, sino con mi Espíritu, ha dicho Jehová de los ejércitos.
+@Zacarías 4:6</string>
+    <string name="v59">Y la paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones y vuestros pensamientos en Cristo Jesús.
+@Filipenses 4:7</string>
+    <string name="v60">Mas nuestra ciudadanía está en los cielos, de donde también esperamos al Salvador, al Señor Jesucristo; el cual transformará el cuerpo de la humillación nuestra, para que sea semejante al cuerpo de la gloria suya, por el poder con el cual puede también sujetar a sí mismo todas las cosas.
+@Filipenses 3:20,21</string>
+    <string name="v61">Jesucristo es el mismo ayer, y hoy, y por los siglos. @Hebreos 13:8</string>
+    <string name="v62">Mis ovejas oyen mi voz, y yo las conozco, y me siguen, y yo les doy vida eterna; y no perecerán jamás, ni nadie las arrebatará de mi mano.
+@Juan 10:27,28</string>
+    <string name="v63">Porque Jehová es justo, y ama la justicia;
+El hombre recto mirará su rostro.
+@Salmos 11:7</string>
+    <string name="v64">Considerad los lirios, cómo crecen; no trabajan, ni hilan; mas os digo, que ni aun Salomón con toda su gloria se vistió como uno de ellos. Y si así viste Dios la hierba que hoy está en el campo, y mañana es echada al horno, ¿cuánto más a vosotros, hombres de poca fe?
+@Lucas 12:27,28</string>
+    <string name="v65">Porque no tenemos un sumo sacerdote que no pueda compadecerse de nuestras debilidades, sino uno que fue tentado en todo según nuestra semejanza, pero sin pecado.
+@Hebreos 4:15</string>
+    <string name="v66">Y he aquí vino un leproso y se postró ante él, diciendo: Señor, si quieres, puedes limpiarme. Jesús extendió la mano y le tocó, diciendo: Quiero; sé limpio. Y al instante su lepra desapareció.
+@Mateo 8:2,3</string>
+    <string name="v67">No los temáis; porque Jehová vuestro Dios, él es el que pelea por vosotros.
+@Deuteronomio 3:22</string>
+    <string name="v68">Se complace Jehová en los que le temen,
+Y en los que esperan en su misericordia.
+@Salmos 147:11</string>
+    <string name="v69">Procura con diligencia presentarte a Dios aprobado, como obrero que no tiene de qué avergonzarse, que usa bien la palabra de verdad.
+@2 Timoteo 2:15</string>
+    <string name="v70">No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo; siempre te ayudaré, siempre te sustentaré con la diestra de mi justicia.
+@Isaías 41:10</string>
+    <string name="v71">Y la paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones y vuestros pensamientos en Cristo Jesús.
+@Filipenses 4:7</string>
+    <string name="v72">Yo soy la vid, vosotros los pámpanos; el que permanece en mí, y yo en él, éste lleva mucho fruto; porque separados de mí nada podéis hacer.
+@Juan 15:5</string>
+    <string name="v73">Por tanto, hermanos, tened paciencia hasta la venida del Señor. Mirad cómo el labrador espera el precioso fruto de la tierra, aguardando con paciencia hasta que reciba la lluvia temprana y la tardía.
+@Santiago 5:7</string>
+    <string name="v74">Antes, en todas estas cosas somos más que vencedores por medio de aquel que nos amó.
+@Romanos 8:37</string>
+    <string name="v75">Mía es la venganza y la retribución;
+A su tiempo su pie resbalará,
+Porque el día de su aflicción está cercano,
+Y lo que les está preparado se apresura.
+@Deuteronomio 32:35</string>
+    <string name="v76">Y no es maravilla, porque el mismo Satanás se disfraza como ángel de luz. Así que, no es extraño si también sus ministros se disfrazan como ministros de justicia; cuyo fin será conforme a sus obras.
+@2 Corintios 11:14,15</string>
+    <string name="v77">Y no hay cosa creada que no sea manifiesta en su presencia; antes bien todas las cosas están desnudas y abiertas a los ojos de aquel a quien tenemos que dar cuenta.
+@Hebreos 4:13</string>
+    <string name="v78">Así que, el que piensa estar firme, mire que no caiga. No os ha sobrevenido ninguna tentación que no sea humana; pero fiel es Dios, que no os dejará ser tentados más de lo que podéis resistir, sino que dará también juntamente con la tentación la salida, para que podáis soportar.
+@1 Corintios 10:12,13</string>
+    <string name="v79">Me mostrarás la senda de la vida;
+En tu presencia hay plenitud de gozo;
+Delicias a tu diestra para siempre.
+@Salmos 16:11</string>
+    <string name="v80">Nadie te podrá hacer frente en todos los días de tu vida; como estuve con Moisés, estaré contigo; no te dejaré, ni te desampararé.
+@Josué 1:5</string>
+    <string name="v81">Tú guardarás en completa paz a aquel cuyo pensamiento en ti persevera; porque en ti ha confiado.
+@Isaías 26:3</string>
+    <string name="v82">Mas vosotros sois linaje escogido, real sacerdocio, nación santa, pueblo adquirido por Dios, para que anunciéis las virtudes de aquel que os llamó de las tinieblas a su luz admirable; vosotros que en otro tiempo no erais pueblo, pero que ahora sois pueblo de Dios; que en otro tiempo no habíais alcanzado misericordia, pero ahora habéis alcanzado misericordia.
+@1 Pedro 2:9,10</string>
+</resources>

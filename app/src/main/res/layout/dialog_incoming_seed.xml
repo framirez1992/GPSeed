@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/grey_900">
+
+    <LinearLayout android:id="@+id/llGeneral"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        <ImageView android:id="@+id/imgFoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+
+            </android.support.v7.widget.CardView>
+
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/grey_900"
+                android:alpha="0.50"
+                android:layout_alignParentBottom="true"
+                android:elevation="2dp">
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="60dp"
+                android:hint="@string/location_name"
+                android:layout_alignParentBottom="true"
+                android:elevation="3dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:background="@color/grey_900"
+                android:visibility="gone">
+            <EditText android:id="@+id/etDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey_300"
+                android:maxLines="1"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView android:id="@+id/tvDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="60dp"
+                android:padding="15dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:elevation="3dp"/>
+
+
+            <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+    <TextView android:id="@+id/tvLatitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_margin="5dp"
+        android:visibility="gone"/>
+
+        <TextView android:id="@+id/tvLongitud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <TableLayout android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="0.3"
+            android:paddingTop="20dp">
+
+    <TableRow android:id="@+id/trCrud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+
+
+        <LinearLayout android:id="@+id/btnBackLlCrud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/back"
+                    android:layout_gravity="center"/>
+            </android.support.v7.widget.CardView>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/back"
+                android:textColor="@color/grey_300"
+                android:textSize="10sp"
+                android:paddingTop="5dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:id="@+id/btnBackEdicion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:visibility="gone">
+            <android.support.v7.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/back"
+                    android:layout_gravity="center"/>
+            </android.support.v7.widget.CardView>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/back"
+                android:textColor="@color/grey_300"
+                android:textSize="10sp"
+                android:paddingTop="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/red_500">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/delete"
+                    android:layout_gravity="center"/>
+            </android.support.v7.widget.CardView>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/delete"
+                android:textColor="@color/grey_300"
+                android:textSize="10sp"
+                android:paddingTop="5dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:id="@+id/btnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/yellow_500">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/edit"
+                    android:layout_gravity="center"/>
+            </android.support.v7.widget.CardView>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/edit"
+                android:textColor="@color/grey_300"
+                android:textSize="10sp"
+                android:paddingTop="5dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/colorPrimary">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/save"
+                    android:layout_gravity="center"/>
+            </android.support.v7.widget.CardView>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/save"
+                android:textColor="@color/grey_300"
+                android:textSize="10sp"
+                android:paddingTop="5dp"/>
+
+        </LinearLayout>
+
+
+        </TableRow>
+
+    <TableRow android:id="@+id/trMainOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <LinearLayout android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:visibility="gone">
+            <android.support.v7.widget.CardView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="15dp">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/back"
+                    android:layout_gravity="center"/>
+            </android.support.v7.widget.CardView>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/exit"
+                android:textColor="@color/grey_300"
+                android:textSize="10sp"
+                android:paddingTop="5dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:id="@+id/btnMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:gravity="center">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/more"
+                    android:layout_gravity="center"/>
+            </android.support.v7.widget.CardView>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/more"
+                android:textColor="@color/grey_300"
+                android:textSize="10sp"
+                android:paddingTop="5dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:id="@+id/btnGo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/colorPrimary">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/map"
+                    android:layout_gravity="center"/>
+            </android.support.v7.widget.CardView>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/map"
+                android:textColor="@color/grey_300"
+                android:textSize="10sp"
+                android:paddingTop="5dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:id="@+id/btnShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/cyan_500">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/share"
+                    android:layout_gravity="center"/>
+            </android.support.v7.widget.CardView>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/share"
+                android:textColor="@color/grey_300"
+                android:textSize="10sp"
+                android:paddingTop="5dp"/>
+
+        </LinearLayout>
+
+
+        </TableRow>
+
+
+            <TableRow android:id="@+id/trGoOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+
+                <LinearLayout android:id="@+id/btnBackLlGo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp"
+                    android:gravity="center">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="20dp">
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@mipmap/back"
+                            android:layout_gravity="center"/>
+                    </android.support.v7.widget.CardView>
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/back"
+                        android:textColor="@color/grey_300"
+                        android:textSize="10sp"
+                        android:paddingTop="5dp"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout android:id="@+id/btnGoDriving"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp"
+                    android:gravity="center">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="20dp"
+                        android:backgroundTint="@color/blue_500">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@mipmap/car"
+                            android:layout_gravity="center"/>
+                    </android.support.v7.widget.CardView>
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/driving"
+                        android:textColor="@color/grey_300"
+                        android:textSize="10sp"
+                        android:paddingTop="5dp"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout android:id="@+id/btnGoWalking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp"
+                    android:gravity="center">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="20dp"
+                        android:backgroundTint="@color/yellow_500">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@mipmap/run"
+                            android:layout_gravity="center"/>
+                    </android.support.v7.widget.CardView>
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/walking"
+                        android:textColor="@color/grey_300"
+                        android:textSize="10sp"
+                        android:paddingTop="5dp"/>
+
+                </LinearLayout>
+
+            </TableRow>
+</TableLayout>
+        </LinearLayout>
+
+
+   </android.support.v7.widget.CardView>
+
+</LinearLayout>

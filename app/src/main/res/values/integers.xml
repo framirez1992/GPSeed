@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="DBVersion">1</integer>
+    <integer name="REQUESTPERMISSION_INTRO">1</integer>
+    <integer name="REQUESTPERMISSION_GPS">11</integer>
+    <integer name="REQUESTPERMISSION_READFILES_SHARE">2</integer>
+    <integer name="REQUESTPERMISSION_READFILES_GRID">21</integer>
+    <integer name="REQUESTPERMISSION_WRITEFILES">22</integer>
+    <integer name="REQUESTPERMISSION_FOTO">3</integer>
+</resources>
