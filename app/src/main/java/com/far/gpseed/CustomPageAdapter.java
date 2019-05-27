@@ -8,7 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.far.gpseed.Utils.CircleTransformation;
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -36,6 +37,8 @@ public class CustomPageAdapter extends PagerAdapter {
         ImageView img = (ImageView) layout.findViewById(R.id.img);
         try {
             Picasso.with(context).load(Uri.fromFile(new File(objects.get(position).getAbsolutePath())))
+                    .memoryPolicy(MemoryPolicy.NO_CACHE )
+                    .networkPolicy(NetworkPolicy.NO_CACHE)
                     //.transform(new CircleTransformation())
                     .into(img);
         }catch (Exception e){

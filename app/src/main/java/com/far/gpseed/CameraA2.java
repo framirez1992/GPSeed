@@ -64,17 +64,7 @@ public class CameraA2 extends AppCompatActivity {
                    });
                }
            });
-           rvTempImages.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if(tempPhotos.size() > 0){
-                        Intent i= new Intent(CameraA2.this,PhotoVisualization.class);
-                        i.putExtra("data", tempPhotos);
-                        startActivity(i);
-                    }
 
-                }
-            });
 
             findViewById(R.id.tvDone).setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -175,5 +165,13 @@ public class CameraA2 extends AppCompatActivity {
         a.execute(capturedImage);
     }
 
+
+    public void goToDetail(){
+        if(tempPhotos.size() > 0){
+            Intent i= new Intent(CameraA2.this,PhotoVisualization.class);
+            i.putExtra("data", tempPhotos);
+            startActivity(i);
+        }
+    }
 
 }

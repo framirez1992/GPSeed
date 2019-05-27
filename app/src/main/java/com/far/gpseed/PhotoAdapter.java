@@ -1,5 +1,6 @@
 package com.far.gpseed;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -17,15 +20,14 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
 
 
     ArrayList<File> objects;
-    Context context;
-    public PhotoAdapter(Context c, ArrayList<File> objs){
-        this.context = c;
+    CameraA2 act;
+    public PhotoAdapter(CameraA2 c, ArrayList<File> objs){
+        this.act = c;
         this.objects = objs;
-
     }
     @Override
     public PhotoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = (LayoutInflater) context
+        LayoutInflater inflater = (LayoutInflater) act
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.image_preview, parent, false);
         return new PhotoViewHolder(view);
@@ -35,7 +37,13 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
     @Override
     public void onBindViewHolder(PhotoViewHolder holder, int position) {
 
-        holder.fillData(context, objects.get(position));
+        holder.fillData(act, objects.get(position));
+        holder.getImg().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                act.goToDetail();
+            }
+        });
     }
 
     @Override
@@ -52,7 +60,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
             img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    v.getId();
+
                 }
             });
         }
@@ -60,12 +68,18 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
         public void fillData(Context context, File f){
             try {
                 Picasso.with(context).load(Uri.fromFile(new File(f.getAbsolutePath())))
+                        .memoryPolicy(MemoryPolicy.NO_CACHE )
+                        .networkPolicy(NetworkPolicy.NO_CACHE)
                         //.transform(new CircleTransformation())
                         .into(img);
             }catch (Exception e){
                 e.printStackTrace();
             }
 
+        }
+
+        public ImageView getImg(){
+            return img;
         }
     }
 }

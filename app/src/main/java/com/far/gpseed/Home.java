@@ -47,6 +47,7 @@ import com.far.gpseed.Helpers.AlarmManager;
 import com.far.gpseed.Models.CV;
 import com.far.gpseed.Models.Preference;
 import com.far.gpseed.Models.SeedLocation;
+import com.far.gpseed.Utils.CircleTransformation;
 import com.far.gpseed.Utils.Funciones;
 import com.far.gpseed.Utils.SeedAdapter;
 import com.google.android.gms.common.ConnectionResult;
@@ -56,6 +57,8 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -1299,9 +1302,14 @@ public class Home extends AppCompatActivity
         if(requestCode == REQUEST_CODE_FOTO && resultCode == RESULT_OK){
             btnGetLocation.setBackground(null);
             if(data.getSerializableExtra("data") != null && ((ArrayList<File>)data.getSerializableExtra("data")).size() >0 ){
-                File f = ((ArrayList<File>)data.getParcelableExtra("data")).get(0);
-                Picasso.with(Home.this).invalidate(f/*Funciones.getTempImageLocation(Home.this)*/);
-                Funciones.setCircularImage(Home.this,f, btnGetLocation);
+                File f = ((ArrayList<File>)data.getSerializableExtra("data")).get(0);
+                Picasso.with(Home.this).invalidate(f.getAbsolutePath()/*Funciones.getTempImageLocation(Home.this)*/);
+                //Funciones.setCircularImage(Home.this,f, btnGetLocation);
+                Picasso.with(Home.this).load(Uri.fromFile(new File(f.getAbsolutePath())))
+                        .memoryPolicy(MemoryPolicy.NO_CACHE )
+                        .networkPolicy(NetworkPolicy.NO_CACHE)
+                        .transform(new CircleTransformation())
+                        .into(btnGetLocation);
             }
 
         }
