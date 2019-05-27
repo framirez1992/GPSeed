@@ -144,4 +144,7 @@
     <string name="msg_permissonsviewimagen">You must accept the permissions to view images</string>
     <string name="msg_nogooglemap">You do not have Google Map yet. Download it and try again</string>
     <string name="exit">Exit</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

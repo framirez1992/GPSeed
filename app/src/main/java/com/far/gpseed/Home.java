@@ -120,6 +120,7 @@ public class Home extends AppCompatActivity
              Toast.makeText(Home.this, getResources().getString(R.string.msg_error_recibiendoinfo), Toast.LENGTH_LONG).show();
             }
         }
+
     }
 
     @Override
@@ -262,7 +263,7 @@ public class Home extends AppCompatActivity
                     ActivityCompat.requestPermissions(Home.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, getResources().getInteger(R.integer.REQUESTPERMISSION_FOTO));
                     return;
                 }
-                startActivityForResult(new Intent(Home.this, myCameraActivity.class), REQUEST_CODE_FOTO);
+                startActivityForResult(new Intent(Home.this, CameraA2.class), REQUEST_CODE_FOTO);
             }
         });
 
@@ -1297,8 +1298,12 @@ public class Home extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == REQUEST_CODE_FOTO && resultCode == RESULT_OK){
             btnGetLocation.setBackground(null);
-            Picasso.with(Home.this).invalidate(Funciones.getTempImageLocation(Home.this));
-            Funciones.setCircularImage(Home.this, btnGetLocation);
+            if(data.getSerializableExtra("data") != null && ((ArrayList<File>)data.getSerializableExtra("data")).size() >0 ){
+                File f = ((ArrayList<File>)data.getParcelableExtra("data")).get(0);
+                Picasso.with(Home.this).invalidate(f/*Funciones.getTempImageLocation(Home.this)*/);
+                Funciones.setCircularImage(Home.this,f, btnGetLocation);
+            }
+
         }
     }
 

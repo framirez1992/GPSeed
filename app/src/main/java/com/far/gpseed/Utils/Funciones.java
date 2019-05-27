@@ -166,6 +166,14 @@ public class Funciones {
 
     }
 
+    public static void setCircularImage(Context c,File f, ImageView img) {
+        Picasso.with(c).load(Uri.fromFile(new File(f.getAbsolutePath())))
+                .memoryPolicy(MemoryPolicy.NO_CACHE )
+                .networkPolicy(NetworkPolicy.NO_CACHE)
+                .transform(new CircleTransformation()).fit().into(img);
+
+    }
+
     public static boolean saveImage(Context context, Bitmap b, String fileName) throws Exception{
 
         createAllFolders(context);
@@ -192,6 +200,18 @@ public class Funciones {
          return result;
     }
 
+    public static File saveImage( Context context, byte[] capturedImage, String fileName) throws Exception{
+        createAllFolders(context);
+        File file = new File( Funciones.getImagesFolder(context)+fileName+".jpg");
+        if(file.exists()) {
+            file.delete();
+        }
+
+            FileOutputStream outputStream = new FileOutputStream(file.getPath());
+            outputStream.write(capturedImage);
+            outputStream.close();
+            return file;
+    }
     public static boolean deleteImage(String url){
         File file = new File(url);
         if(file.exists()){
