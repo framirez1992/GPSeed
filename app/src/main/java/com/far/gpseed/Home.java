@@ -739,6 +739,21 @@ public class Home extends AppCompatActivity
                     ActivityCompat.requestPermissions(Home.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                             getResources().getInteger(R.integer.REQUESTPERMISSION_READFILES_GRID));
             }
+            imgFoto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(sl.imageUrls != null && sl.imageUrls.size() > 0){
+                        ArrayList<File> files = new ArrayList<>();
+                        for(String s: sl.imageUrls){
+                            files.add(new File(s));
+                        }
+                        Intent i= new Intent(Home.this,PhotoVisualization.class);
+                        i.putExtra("data", files);
+                        startActivity(i);
+                    }
+
+                }
+            });
 
             tvLatitud.setText(Double.toString(sl.Latitude));
             tvLongitud.setText(Double.toString(sl.Longitude));

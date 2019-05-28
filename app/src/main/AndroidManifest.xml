@@ -15,8 +15,8 @@
         android:roundIcon="@mipmap/seed"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fake_dialog"></activity>
-        <activity android:name=".PhotoVisualization" />
+        <activity android:name=".PhotoVisualization"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".CameraA2"
             android:configChanges="orientation|screenLayout"
