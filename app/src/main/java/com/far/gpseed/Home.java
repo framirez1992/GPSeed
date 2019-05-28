@@ -22,6 +22,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityCompat.OnRequestPermissionsResultCallback;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -163,6 +164,7 @@ public class Home extends AppCompatActivity
                     myTempSeed.Latitude = locationResult.getLastLocation().getLatitude();
                     myTempSeed.Longitude = locationResult.getLastLocation().getLongitude();
                     myTempSeed.Description = new Date().toString();
+                    myTempSeed.Description2 = "";
 
                     if(llSeedOptions.getVisibility()== View.INVISIBLE) {
                         llSeedOptions.setVisibility(View.VISIBLE);
@@ -545,7 +547,7 @@ public class Home extends AppCompatActivity
 
     /**
      * inicia la navegacion de google maps en la ubicacion seleccionada. d = Driving, w = Walking
-     * @param seed
+     * @param destino
      */
     public void IniciarNavegacion(SeedLocation destino, String medio){
 
@@ -572,6 +574,7 @@ public class Home extends AppCompatActivity
         d.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         d.setTitle("Save location");
         final EditText etNombre = (EditText)d.findViewById(R.id.etNombre);
+        final EditText etDescripcion = (EditText)d.findViewById(R.id.etDescripcion);
         LinearLayout btnAceptar = (LinearLayout)d.findViewById(R.id.btnAceptar);
         LinearLayout btnCancelar = (LinearLayout)d.findViewById(R.id.btnCancelar);
 
@@ -582,6 +585,7 @@ public class Home extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 myTempSeed.Description = etNombre.getText().toString();
+                myTempSeed.Description2 = etDescripcion.getText().toString();
                 guardar(myTempSeed);
                 d.dismiss();
                 hideMainOptions();
@@ -705,7 +709,9 @@ public class Home extends AppCompatActivity
             final TextView tvLatitud = (TextView) d.findViewById(R.id.tvLatitud);
             final TextView tvLongitud = (TextView) d.findViewById(R.id.tvLongitud);
             final EditText etDescripcion = (EditText) d.findViewById(R.id.etDescripcion);
+            final EditText etDescripcion2 = (EditText) d.findViewById(R.id.etDescripcion2);
             final TextInputLayout tilDescripcion = (TextInputLayout)d.findViewById(R.id.tilDescripcion);
+            final TextInputLayout tilDescripcion2 = (TextInputLayout)d.findViewById(R.id.tilDescripcion2);
 
             final TableRow trMainOptions = (TableRow)d.findViewById(R.id.trMainOptions);
             final TableRow trGoOptions = (TableRow)d.findViewById(R.id.trGoOptions);
@@ -727,7 +733,11 @@ public class Home extends AppCompatActivity
 
             ImageView imgFoto = (ImageView)d.findViewById(R.id.imgFoto);
             final TextView tvDescripcion = (TextView)d.findViewById(R.id.tvDescripcion);
+            final TextView tvDescripcion2 = (TextView)d.findViewById(R.id.tvDescripcion2);
+            tvDescripcion.setMovementMethod(new ScrollingMovementMethod());
+            tvDescripcion2.setMovementMethod(new ScrollingMovementMethod());
             tvDescripcion.setText(sl.Description);
+            tvDescripcion2.setText(sl.Description2);
 
             if(ActivityCompat.checkSelfPermission(Home.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                 String ruta = (sl.imageUrls != null && sl.imageUrls.size() > 0 && new File(sl.imageUrls.get(0)).exists())
@@ -758,6 +768,7 @@ public class Home extends AppCompatActivity
             tvLatitud.setText(Double.toString(sl.Latitude));
             tvLongitud.setText(Double.toString(sl.Longitude));
             etDescripcion.setText(sl.Description);
+            etDescripcion2.setText(sl.Description2);
 
 
             btnMore.setOnClickListener(new View.OnClickListener() {
@@ -1015,8 +1026,12 @@ public class Home extends AppCompatActivity
                 public void onClick(View v) {
                     try {
                         tvDescripcion.setVisibility(View.GONE);
+                        tvDescripcion2.setVisibility(View.GONE);
                         tilDescripcion.setVisibility(View.VISIBLE);
+                        tilDescripcion2.setVisibility(View.VISIBLE);
                         etDescripcion.setText(tvDescripcion.getText().toString());
+                        etDescripcion2.setText(tvDescripcion2.getText().toString());
+
                         etDescripcion.setSelection(0, tvDescripcion.getText().toString().length());
                         Funciones.showKeyboard(Home.this,etDescripcion);
 
@@ -1128,8 +1143,11 @@ public class Home extends AppCompatActivity
                     //btnBackEdicion.setVisibility(View.GONE);
                     //btnSave.setVisibility(View.GONE);
                     tilDescripcion.setVisibility(View.GONE);
+                    tilDescripcion2.setVisibility(View.GONE);
                     tvDescripcion.setVisibility(View.VISIBLE);
+                    tvDescripcion2.setVisibility(View.GONE);
                     etDescripcion.setText("");
+                    etDescripcion2.setText("");
 
                     //btnBackLlCrud.setVisibility(View.VISIBLE);
                     //btnEdit.setVisibility(View.VISIBLE);
@@ -1145,6 +1163,7 @@ public class Home extends AppCompatActivity
 
                     if(DAL_References.getInstance(Home.this).exist(sl.Id)){
                         sl.Description = etDescripcion.getText().toString();
+                        sl.Description2 = etDescripcion2.getText().toString();
                         editar(sl);
 
                         btnBackEdicion.setVisibility(View.GONE);
@@ -1154,7 +1173,9 @@ public class Home extends AppCompatActivity
                         btnBackLlCrud.setVisibility(View.VISIBLE);
 
                         tilDescripcion.setVisibility(View.GONE);
+                        tilDescripcion2.setVisibility(View.GONE);
                         tvDescripcion.setVisibility(View.VISIBLE);
+                        tvDescripcion2.setVisibility(View.VISIBLE);
 
                     }else {
 
@@ -1162,6 +1183,7 @@ public class Home extends AppCompatActivity
                         sl.Latitude = Double.parseDouble(tvLatitud.getText().toString());
                         sl.Longitude = Double.parseDouble(tvLongitud.getText().toString());
                         sl.Description = etDescripcion.getText().toString();
+                        sl.Description2 = etDescripcion2.getText().toString();
                         guardar(sl);
                         ResetLlSeed();
                         fillGridMySeeds();

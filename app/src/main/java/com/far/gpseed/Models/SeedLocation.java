@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class SeedLocation implements Serializable {
     public String Id;
-    public String Description;
+    public String Description, Description2 ;
     public double Latitude;
     public double Longitude;
     public ArrayList<String> imageUrls;

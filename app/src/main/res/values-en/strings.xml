@@ -22,6 +22,7 @@
     <string name="photo">Photo</string>
     <string name="save">Save</string>
     <string name="location_name">Location name</string>
+    <string name="location_description">Location description</string>
     <string name="new_seed">New seed</string>
     <string name="alert">Alert</string>
     <string name="confirm">Confirm</string>

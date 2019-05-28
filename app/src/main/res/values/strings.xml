@@ -120,6 +120,7 @@
     <string name="photo">Photo</string>
     <string name="save">Save</string>
     <string name="location_name">Location name</string>
+    <string name="location_description">Location description</string>
     <string name="new_seed">New seed</string>
     <string name="alert">Alert</string>
     <string name="confirm">Confirm</string>
@@ -149,6 +150,4 @@
     <string name="msg_nogooglemap">You do not have Google Map yet. Download it and try again</string>
     <string name="exit">Exit</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
