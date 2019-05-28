@@ -4,12 +4,14 @@ import android.content.Context;
 import android.database.Cursor;
 
 import com.far.gpseed.Models.SeedLocation;
+import com.far.gpseed.Utils.Funciones;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.UUID;
 
 /**
- * Created by mdsoft on 12/27/2017.
+ * Created by framirez on 12/27/2017.
  */
 
 public class DAL_References {
@@ -33,14 +35,14 @@ public class DAL_References {
         String sql = "Insert into "+TABLE_NAME+" " +
                 "(Id,Description, Latitude, Longitude, SaveDate, ImageUrl) values " +
                 "(?, ?, ?, ?, ?, ?)";
-        DB.getInstance(mContext).getWritableDatabase().execSQL(sql, new String[]{seed.Id, seed.Description,Double.toString(seed.Latitude), Double.toString(seed.Longitude), "datetime('now')", seed.imageUrl });
+        DB.getInstance(mContext).getWritableDatabase().execSQL(sql, new String[]{seed.Id, seed.Description,Double.toString(seed.Latitude), Double.toString(seed.Longitude), "datetime('now')", null });
     }
 
     public void Update(SeedLocation seed) throws Exception{
         String sql = "Update  "+TABLE_NAME+" " +
                 "set Id = ?,Description = ?, Latitude = ?, Longitude = ?, ImageUrl = ? " +
                 "Where Id = ?";
-        DB.getInstance(mContext).getWritableDatabase().execSQL(sql, new String[]{seed.Id,seed.Description,Double.toString(seed.Latitude), Double.toString(seed.Longitude),seed.imageUrl, seed.Id });
+        DB.getInstance(mContext).getWritableDatabase().execSQL(sql, new String[]{seed.Id,seed.Description,Double.toString(seed.Latitude), Double.toString(seed.Longitude),null, seed.Id });
     }
 
 
@@ -73,7 +75,8 @@ public class DAL_References {
             sl.Description = c.getString(c.getColumnIndex("Description"));
             sl.Longitude = c.getDouble(c.getColumnIndex("Longitude"));
             sl.Latitude = c.getDouble(c.getColumnIndex("Latitude"));
-            sl.imageUrl = c.getString(c.getColumnIndex("ImageUrl"));
+
+            sl.imageUrls = getImageUrls(sl.Id);
 
             result.add(sl);
         }
@@ -94,5 +97,17 @@ public class DAL_References {
             e.printStackTrace();
         }
         return result;
+    }
+
+    public ArrayList<String> getImageUrls(String sID){
+        ArrayList<String> data = new ArrayList<>();
+        File folder = new File(Funciones.getImagesFolder(mContext)+sID+"/");
+        File[] files = folder.listFiles();
+        if(files != null && files.length > 0) {
+            for (File f : files) {
+                data.add(f.getAbsolutePath());
+            }
+        }
+        return data;
     }
 }

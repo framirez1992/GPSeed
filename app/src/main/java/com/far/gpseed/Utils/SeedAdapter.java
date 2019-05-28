@@ -57,9 +57,9 @@ import java.util.ArrayList;
 
             TextView nombre = (TextView) view.findViewById(R.id.tvDescripcion);
             nombre.setText(objects.get(position).Description);
-            if(!objects.get(position).imageUrl.equals("")) {
+            if(objects.get(position).imageUrls.size()>0) {
                 ImageView img = (ImageView) view.findViewById(R.id.img);
-                Picasso.with(context).load(Uri.fromFile(new File(objects.get(position).imageUrl))).transform(new CircleTransformation()).into(img);
+                Picasso.with(context).load(Uri.fromFile(new File(objects.get(position).imageUrls.get(0)))).transform(new CircleTransformation()).into(img);
             }
 
 

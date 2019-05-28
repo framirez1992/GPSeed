@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import com.squareup.picasso.Transformation;
 
 /**
- * Created by mdsoft on 1/4/2018.
+ * Created by framirez on 1/4/2018.
  */
 
 

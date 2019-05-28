@@ -8,7 +8,7 @@ import com.far.gpseed.R;
 import com.far.gpseed.Utils.Funciones;
 
 /**
- * Created by mdsoft on 7/26/2017.
+ * Created by framirez on 7/26/2017.
  */
 
 public class NotificationManager {

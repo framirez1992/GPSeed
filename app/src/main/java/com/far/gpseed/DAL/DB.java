@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by mdsoft on 12/27/2017.
+ * Created by framirez on 12/27/2017.
  */
 
 public class DB extends SQLiteOpenHelper {

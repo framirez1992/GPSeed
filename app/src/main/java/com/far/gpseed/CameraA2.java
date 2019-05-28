@@ -2,7 +2,6 @@ package com.far.gpseed;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,10 +12,8 @@ import android.widget.Toast;
 
 import com.camerakit.CameraKitView;
 import com.far.gpseed.Utils.Funciones;
-import com.squareup.picasso.Picasso;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 public class CameraA2 extends AppCompatActivity {
@@ -80,6 +77,12 @@ public class CameraA2 extends AppCompatActivity {
         }catch(Exception e){
             e.printStackTrace();
         }
+
+        ///////////////////////////////////////////////
+        /// IMPIANOD FOLDER DE IMAGENES TEMPORALES ///
+        //////////////////////////////////////////////
+        Funciones.deleteTempImages(CameraA2.this);
+        /////////////////////////////////////////////
     }
 
     @Override

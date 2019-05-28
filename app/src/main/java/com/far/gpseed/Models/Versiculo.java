@@ -3,7 +3,7 @@ package com.far.gpseed.Models;
 import java.util.UUID;
 
 /**
- * Created by mdsoft on 7/24/2017.
+ * Created by framirez on 7/24/2017.
  */
 
 public class Versiculo {

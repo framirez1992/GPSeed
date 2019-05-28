@@ -15,11 +15,12 @@
         android:roundIcon="@mipmap/seed"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PhotoVisualization"></activity>
+        <activity android:name=".fake_dialog"></activity>
+        <activity android:name=".PhotoVisualization" />
         <activity
             android:name=".CameraA2"
             android:configChanges="orientation|screenLayout"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <receiver
             android:name=".Helpers.BroadcastReceiver_ORDR"
