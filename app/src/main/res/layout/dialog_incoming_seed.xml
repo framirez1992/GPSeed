@@ -111,7 +111,10 @@
                     android:text=""
                     android:textColor="@color/white"
                     android:gravity="center"
-                    android:scrollbars="vertical"/>
+                    android:scrollbars="vertical"
+                    android:paddingBottom="15dp"
+                    android:paddingRight="25dp"
+                    android:paddingLeft="25dp"/>
 
 
             </LinearLayout>
