@@ -21,7 +21,11 @@
     <string name="photo">Foto</string>
     <string name="save">Guardar</string>
     <string name="location_name">Nombre de la ubicación</string>
+    <string name="location_description">Descripcion de la ubicación</string>
     <string name="new_seed">Nueva semilla</string>
+    <string name="alert">Alerta</string>
+    <string name="confirm">Confirmar</string>
+    <string name="msgExistingPhoto">Sí realiza esta operación se borraran las fotos capturadas recientemente.</string>
     <string name="back">Atrás</string>
     <string name="msg_saved">Guardado exitosamente</string>
     <string name="more">Más</string>

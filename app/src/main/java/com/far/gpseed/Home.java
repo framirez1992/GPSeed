@@ -20,7 +20,9 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityCompat.OnRequestPermissionsResultCallback;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -47,6 +49,7 @@ import com.far.gpseed.Helpers.AlarmManager;
 import com.far.gpseed.Models.CV;
 import com.far.gpseed.Models.Preference;
 import com.far.gpseed.Models.SeedLocation;
+import com.far.gpseed.Utils.CircleTransformation;
 import com.far.gpseed.Utils.Funciones;
 import com.far.gpseed.Utils.SeedAdapter;
 import com.google.android.gms.common.ConnectionResult;
@@ -56,6 +59,8 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -90,6 +95,8 @@ public class Home extends AppCompatActivity
     Preference savedPreference;
     BottomNavigationView navigation;
 
+    boolean picturesToSave = false;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -120,6 +127,12 @@ public class Home extends AppCompatActivity
              Toast.makeText(Home.this, getResources().getString(R.string.msg_error_recibiendoinfo), Toast.LENGTH_LONG).show();
             }
         }
+        ///////////////////////////////////////////////
+        /// IMPIANOD FOLDER DE IMAGENES TEMPORALES ///
+        //////////////////////////////////////////////
+        Funciones.deleteTempImages(Home.this);
+        /////////////////////////////////////////////
+
     }
 
     @Override
@@ -151,6 +164,7 @@ public class Home extends AppCompatActivity
                     myTempSeed.Latitude = locationResult.getLastLocation().getLatitude();
                     myTempSeed.Longitude = locationResult.getLastLocation().getLongitude();
                     myTempSeed.Description = new Date().toString();
+                    myTempSeed.Description2 = "";
 
                     if(llSeedOptions.getVisibility()== View.INVISIBLE) {
                         llSeedOptions.setVisibility(View.VISIBLE);
@@ -223,25 +237,7 @@ public class Home extends AppCompatActivity
                 //}
                 ////////////////////////////////////////////
 
-                rebotar(v);
-
-                LocationRequest lr = new LocationRequest();
-                lr.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-                lr.setInterval(1000);//1 segundo
-
-                if (ActivityCompat.checkSelfPermission(Home.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
-                    ActivityCompat.requestPermissions(Home.this,
-                            new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                            getResources().getInteger(R.integer.REQUESTPERMISSION_GPS));
-                    return;
-                }
-
-                Funciones.vibrate(Home.this, 200);
-
-                LocationServices.getFusedLocationProviderClient(Home.this).requestLocationUpdates(lr, mLocationCallback, null);
-                tvMensaje.setText(getResources().getString(R.string.msg_obteniendogps));
-                tvMensaje.setTextColor(getResources().getColor(R.color.grey_300));
-                pbSeed.setVisibility(View.VISIBLE);
+                getLocation(v);
             }
         });
 
@@ -262,7 +258,13 @@ public class Home extends AppCompatActivity
                     ActivityCompat.requestPermissions(Home.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, getResources().getInteger(R.integer.REQUESTPERMISSION_FOTO));
                     return;
                 }
-                startActivityForResult(new Intent(Home.this, myCameraActivity.class), REQUEST_CODE_FOTO);
+
+                if(picturesToSave){
+                    showDialogExistingPicture();
+                }else{
+                    startActivityForResult(new Intent(Home.this, CameraA2.class), REQUEST_CODE_FOTO);
+                }
+
             }
         });
 
@@ -278,8 +280,8 @@ public class Home extends AppCompatActivity
                     return;
                 }
 
-                if(Funciones.existTempImage(Home.this)){
-                    myTempSeed.imageUrl = Funciones.getTempImageLocation(Home.this);
+                if(picturesToSave && Funciones.existTempImage(Home.this)){
+                    myTempSeed.imageUrls = Funciones.getTempImagesUrls(Home.this);
                 }
                Share(myTempSeed);
             }
@@ -473,9 +475,11 @@ public class Home extends AppCompatActivity
     }
 
     public void ResetLlSeed(){
+        picturesToSave = false;
+
         hideMainOptions();
         myTempSeed = null;
-        Funciones.deleteImage(Funciones.getTempImageLocation(Home.this));
+        Funciones.deleteImage( Funciones.getTempImagesUrls(Home.this));
         btnGetLocation.setImageResource(R.mipmap.seed);
 
         pbSeed.setVisibility(View.INVISIBLE);
@@ -491,13 +495,14 @@ public class Home extends AppCompatActivity
             protected String doInBackground(Void... params) {
                 try {
                     sl.Id = UUID.randomUUID().toString();
-                    sl.imageUrl = (Funciones.existTempImage(Home.this))?
-                            Funciones.getImagesFolder(Home.this)+sl.Id+".jpg"
-                            :"";
+                    //sl.imageUrl = (Funciones.existTempImage(Home.this))?
+                     //       Funciones.getImagesFolder(Home.this)+sl.Id+".jpg"
+                      //      :"";
                     DAL_References.getInstance(Home.this).Insert(sl);
-                    if(Funciones.existTempImage(Home.this)) {
-                        Bitmap tempImage = BitmapFactory.decodeFile(Funciones.getTempImageLocation(Home.this));
-                        Funciones.saveImage(Home.this, tempImage, sl.Id);
+                    if(picturesToSave && Funciones.existTempImage(Home.this)) {
+                       // Bitmap tempImage = BitmapFactory.decodeFile(Funciones.getTempImageLocation(Home.this));
+                        //Funciones.saveImage(Home.this, tempImage, sl.Id);
+                        Funciones.cutAndPasteAll(Home.this, Funciones.getImagenesTempFolder(Home.this), sl.Id);
                     }
                 }catch(Exception e){
                    return e.getMessage().toString();
@@ -542,7 +547,7 @@ public class Home extends AppCompatActivity
 
     /**
      * inicia la navegacion de google maps en la ubicacion seleccionada. d = Driving, w = Walking
-     * @param seed
+     * @param destino
      */
     public void IniciarNavegacion(SeedLocation destino, String medio){
 
@@ -569,6 +574,7 @@ public class Home extends AppCompatActivity
         d.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         d.setTitle("Save location");
         final EditText etNombre = (EditText)d.findViewById(R.id.etNombre);
+        final EditText etDescripcion = (EditText)d.findViewById(R.id.etDescripcion);
         LinearLayout btnAceptar = (LinearLayout)d.findViewById(R.id.btnAceptar);
         LinearLayout btnCancelar = (LinearLayout)d.findViewById(R.id.btnCancelar);
 
@@ -579,6 +585,7 @@ public class Home extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 myTempSeed.Description = etNombre.getText().toString();
+                myTempSeed.Description2 = etDescripcion.getText().toString();
                 guardar(myTempSeed);
                 d.dismiss();
                 hideMainOptions();
@@ -616,9 +623,17 @@ public class Home extends AppCompatActivity
                         data = Double.toString(sl.Latitude) + "," + Double.toString(sl.Longitude) + "," + sl.Description;
                         data = Funciones.Enc(data, getResources().getString(R.string.passEncryption));
 
-                        rutaImagen = (sl.imageUrl != null && new File(sl.imageUrl).exists())
-                                ?sl.imageUrl
-                                :Funciones.getRutaLogo(Home.this);
+                        rutaImagen = Funciones.getRutaLogo(Home.this);
+                        if(sl.imageUrls != null && sl.imageUrls.size()> 0 ){
+                            rutaImagen ="";
+                            for(String s: sl.imageUrls){
+                                //if(new File(s).exists()){
+                                    rutaImagen+=s+"ximg";
+                               // }
+                            }
+                        }
+
+
 
                     }catch(Exception e){
                         return "FAIL-"+e.getMessage().toString();
@@ -633,7 +648,7 @@ public class Home extends AppCompatActivity
 
                     if(s.startsWith("OK-")){
                         String data = s.replace("OK-", "").split("xcut")[1];
-                        String rutaImagen = s.replace("OK-", "").split("xcut")[0];
+                        String[] rutaImagen = (s.replace("OK-", "").split("xcut")[0]).split("ximg");
 
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
@@ -641,7 +656,16 @@ public class Home extends AppCompatActivity
                                 getResources().getString(R.string.enlace_app_store)
                                 +getResources().getString(R.string.titulo_press_url)
                                 +"http://www.far.com/gpseed/-"+data);//WorkGreat
-                        sendIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(rutaImagen)));
+                        ArrayList<Uri> images = new ArrayList<>();
+                        for(String url: rutaImagen){
+                            images.add(Uri.fromFile(new File(url)));
+                        }
+                        if(images.size() == 1){
+                            sendIntent.putExtra(Intent.EXTRA_STREAM, images.get(0)); // 1 sola imagen o video
+                        }else{
+                            sendIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, images);//varias imagens o videos etc
+                        }
+
                         sendIntent.setType("*/*");
 
                         startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.send_to)));
@@ -685,7 +709,9 @@ public class Home extends AppCompatActivity
             final TextView tvLatitud = (TextView) d.findViewById(R.id.tvLatitud);
             final TextView tvLongitud = (TextView) d.findViewById(R.id.tvLongitud);
             final EditText etDescripcion = (EditText) d.findViewById(R.id.etDescripcion);
+            final EditText etDescripcion2 = (EditText) d.findViewById(R.id.etDescripcion2);
             final TextInputLayout tilDescripcion = (TextInputLayout)d.findViewById(R.id.tilDescripcion);
+            final TextInputLayout tilDescripcion2 = (TextInputLayout)d.findViewById(R.id.tilDescripcion2);
 
             final TableRow trMainOptions = (TableRow)d.findViewById(R.id.trMainOptions);
             final TableRow trGoOptions = (TableRow)d.findViewById(R.id.trGoOptions);
@@ -707,11 +733,15 @@ public class Home extends AppCompatActivity
 
             ImageView imgFoto = (ImageView)d.findViewById(R.id.imgFoto);
             final TextView tvDescripcion = (TextView)d.findViewById(R.id.tvDescripcion);
+            final TextView tvDescripcion2 = (TextView)d.findViewById(R.id.tvDescripcion2);
+            tvDescripcion.setMovementMethod(new ScrollingMovementMethod());
+            tvDescripcion2.setMovementMethod(new ScrollingMovementMethod());
             tvDescripcion.setText(sl.Description);
+            tvDescripcion2.setText(sl.Description2);
 
             if(ActivityCompat.checkSelfPermission(Home.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                String ruta = (sl.imageUrl != null && new File(sl.imageUrl).exists())
-                        ? sl.imageUrl
+                String ruta = (sl.imageUrls != null && sl.imageUrls.size() > 0 && new File(sl.imageUrls.get(0)).exists())
+                        ? sl.imageUrls.get(0)
                         : Funciones.getRutaLogo(Home.this);
                 Picasso.with(Home.this).load(Uri.fromFile(new File(ruta))).into(imgFoto);
             }else{
@@ -719,10 +749,26 @@ public class Home extends AppCompatActivity
                     ActivityCompat.requestPermissions(Home.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                             getResources().getInteger(R.integer.REQUESTPERMISSION_READFILES_GRID));
             }
+            imgFoto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(sl.imageUrls != null && sl.imageUrls.size() > 0){
+                        ArrayList<File> files = new ArrayList<>();
+                        for(String s: sl.imageUrls){
+                            files.add(new File(s));
+                        }
+                        Intent i= new Intent(Home.this,PhotoVisualization.class);
+                        i.putExtra("data", files);
+                        startActivity(i);
+                    }
+
+                }
+            });
 
             tvLatitud.setText(Double.toString(sl.Latitude));
             tvLongitud.setText(Double.toString(sl.Longitude));
             etDescripcion.setText(sl.Description);
+            etDescripcion2.setText(sl.Description2);
 
 
             btnMore.setOnClickListener(new View.OnClickListener() {
@@ -964,7 +1010,8 @@ public class Home extends AppCompatActivity
                 public void onClick(View v) {
                     try{
                         DAL_References.getInstance(Home.this).Delete(sl);
-                        Funciones.deleteImage(sl.imageUrl);
+                        Funciones.deleteImage(sl.imageUrls);
+
                         d.dismiss();
                         Toast.makeText(Home.this, getResources().getString(R.string.deleted), Toast.LENGTH_LONG).show();
                         fillGridMySeeds();
@@ -979,8 +1026,12 @@ public class Home extends AppCompatActivity
                 public void onClick(View v) {
                     try {
                         tvDescripcion.setVisibility(View.GONE);
+                        tvDescripcion2.setVisibility(View.GONE);
                         tilDescripcion.setVisibility(View.VISIBLE);
+                        tilDescripcion2.setVisibility(View.VISIBLE);
                         etDescripcion.setText(tvDescripcion.getText().toString());
+                        etDescripcion2.setText(tvDescripcion2.getText().toString());
+
                         etDescripcion.setSelection(0, tvDescripcion.getText().toString().length());
                         Funciones.showKeyboard(Home.this,etDescripcion);
 
@@ -1092,8 +1143,11 @@ public class Home extends AppCompatActivity
                     //btnBackEdicion.setVisibility(View.GONE);
                     //btnSave.setVisibility(View.GONE);
                     tilDescripcion.setVisibility(View.GONE);
+                    tilDescripcion2.setVisibility(View.GONE);
                     tvDescripcion.setVisibility(View.VISIBLE);
+                    tvDescripcion2.setVisibility(View.GONE);
                     etDescripcion.setText("");
+                    etDescripcion2.setText("");
 
                     //btnBackLlCrud.setVisibility(View.VISIBLE);
                     //btnEdit.setVisibility(View.VISIBLE);
@@ -1109,6 +1163,7 @@ public class Home extends AppCompatActivity
 
                     if(DAL_References.getInstance(Home.this).exist(sl.Id)){
                         sl.Description = etDescripcion.getText().toString();
+                        sl.Description2 = etDescripcion2.getText().toString();
                         editar(sl);
 
                         btnBackEdicion.setVisibility(View.GONE);
@@ -1118,7 +1173,9 @@ public class Home extends AppCompatActivity
                         btnBackLlCrud.setVisibility(View.VISIBLE);
 
                         tilDescripcion.setVisibility(View.GONE);
+                        tilDescripcion2.setVisibility(View.GONE);
                         tvDescripcion.setVisibility(View.VISIBLE);
+                        tvDescripcion2.setVisibility(View.VISIBLE);
 
                     }else {
 
@@ -1126,6 +1183,7 @@ public class Home extends AppCompatActivity
                         sl.Latitude = Double.parseDouble(tvLatitud.getText().toString());
                         sl.Longitude = Double.parseDouble(tvLongitud.getText().toString());
                         sl.Description = etDescripcion.getText().toString();
+                        sl.Description2 = etDescripcion2.getText().toString();
                         guardar(sl);
                         ResetLlSeed();
                         fillGridMySeeds();
@@ -1297,8 +1355,18 @@ public class Home extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == REQUEST_CODE_FOTO && resultCode == RESULT_OK){
             btnGetLocation.setBackground(null);
-            Picasso.with(Home.this).invalidate(Funciones.getTempImageLocation(Home.this));
-            Funciones.setCircularImage(Home.this, btnGetLocation);
+            if(data.getSerializableExtra("data") != null && ((ArrayList<File>)data.getSerializableExtra("data")).size() >0 ){
+                File f = ((ArrayList<File>)data.getSerializableExtra("data")).get(0);
+                Picasso.with(Home.this).invalidate(f.getAbsolutePath()/*Funciones.getTempImageLocation(Home.this)*/);
+                //Funciones.setCircularImage(Home.this,f, btnGetLocation);
+                Picasso.with(Home.this).load(Uri.fromFile(new File(f.getAbsolutePath())))
+                        .memoryPolicy(MemoryPolicy.NO_CACHE )
+                        .networkPolicy(NetworkPolicy.NO_CACHE)
+                        .transform(new CircleTransformation())
+                        .into(btnGetLocation);
+                picturesToSave = true;
+            }
+
         }
     }
 
@@ -1464,5 +1532,56 @@ public class Home extends AppCompatActivity
 
             }
         });
+    }
+
+    public void getLocation(View v){
+        rebotar(v);
+
+        LocationRequest lr = new LocationRequest();
+        lr.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        lr.setInterval(1000);//1 segundo
+
+        if (ActivityCompat.checkSelfPermission(Home.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+            ActivityCompat.requestPermissions(Home.this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    getResources().getInteger(R.integer.REQUESTPERMISSION_GPS));
+            return;
+        }
+
+        Funciones.vibrate(Home.this, 200);
+
+        LocationServices.getFusedLocationProviderClient(Home.this).requestLocationUpdates(lr, mLocationCallback, null);
+        tvMensaje.setText(getResources().getString(R.string.msg_obteniendogps));
+        tvMensaje.setTextColor(getResources().getColor(R.color.grey_300));
+        pbSeed.setVisibility(View.VISIBLE);
+    }
+
+    public void showDialogExistingPicture(){
+        final Dialog d = new Dialog(Home.this);
+        d.setContentView(R.layout.simple_dialog);
+        d.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        d.setTitle("Save location");
+        ((TextView)d.findViewById(R.id.tvDescripcion)).setText(getResources().getText(R.string.msgExistingPhoto));
+        LinearLayout btnAceptar = (LinearLayout)d.findViewById(R.id.btnAceptar);
+        LinearLayout btnCancelar = (LinearLayout)d.findViewById(R.id.btnCancelar);
+
+        btnAceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                picturesToSave = false;
+                btnGetLocation.setImageResource(R.mipmap.seed);
+                btnFoto.performClick();
+                d.dismiss();
+
+            }
+        });
+
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                d.dismiss();
+            }
+        });
+        d.show();
     }
 }

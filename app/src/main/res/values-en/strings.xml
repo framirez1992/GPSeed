@@ -22,7 +22,11 @@
     <string name="photo">Photo</string>
     <string name="save">Save</string>
     <string name="location_name">Location name</string>
+    <string name="location_description">Location description</string>
     <string name="new_seed">New seed</string>
+    <string name="alert">Alert</string>
+    <string name="confirm">Confirm</string>
+    <string name="msgExistingPhoto">If you perform this operation, recently captured photos will be erased.</string>
     <string name="back">Back</string>
     <string name="msg_saved">Saved successfully</string>
     <string name="more">More</string>

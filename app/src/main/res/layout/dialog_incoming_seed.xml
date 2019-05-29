@@ -32,43 +32,93 @@
 
 
             <LinearLayout android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="100dp"
                 android:background="@color/grey_900"
                 android:alpha="0.50"
                 android:layout_alignParentBottom="true"
                 android:elevation="2dp">
             </LinearLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tilDescripcion"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxHeight="60dp"
-                android:hint="@string/location_name"
+                android:orientation="vertical"
                 android:layout_alignParentBottom="true"
-                android:elevation="3dp"
-                android:paddingRight="20dp"
-                android:paddingLeft="20dp"
-                android:paddingTop="10dp"
-                android:background="@color/grey_900"
-                android:visibility="gone">
-            <EditText android:id="@+id/etDescripcion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/grey_300"
-                android:maxLines="1"/>
-            </android.support.design.widget.TextInputLayout>
+                android:elevation="3dp">
 
-            <TextView android:id="@+id/tvDescripcion"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="60dp"
+                    android:hint="@string/location_name"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:background="@color/grey_900"
+                    android:visibility="gone">
+                    <EditText android:id="@+id/etDescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/grey_300"
+                        android:maxLines="1"/>
+                </android.support.design.widget.TextInputLayout>
+
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilDescripcion2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="60dp"
+                    android:hint="@string/location_name"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:background="@color/grey_900"
+                    android:visibility="gone">
+                    <EditText android:id="@+id/etDescripcion2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/grey_300"
+                        android:maxLines="1"/>
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxHeight="60dp"
-                android:padding="15dp"
-                android:text=""
-                android:textColor="@color/white"
-                android:gravity="center"
+                android:orientation="vertical"
                 android:layout_alignParentBottom="true"
-                android:elevation="3dp"/>
+                android:elevation="3dp">
+
+                <TextView android:id="@+id/tvDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="30dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:scrollbars="vertical"/>
+
+                <TextView android:id="@+id/tvDescripcion2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="70dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:scrollbars="vertical"
+                    android:paddingBottom="15dp"
+                    android:paddingRight="25dp"
+                    android:paddingLeft="25dp"/>
+
+
+            </LinearLayout>
+
 
 
             <LinearLayout android:layout_width="match_parent"

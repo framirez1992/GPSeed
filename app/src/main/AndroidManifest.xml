@@ -4,10 +4,9 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -16,36 +15,48 @@
         android:roundIcon="@mipmap/seed"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PhotoVisualization"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".CameraA2"
+            android:configChanges="orientation|screenLayout"
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <receiver android:name=".Helpers.BroadcastReceiver_ORDR" android:enabled="true" android:exported="true">
+        <receiver
+            android:name=".Helpers.BroadcastReceiver_ORDR"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
+
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.REBOOT" />
                 <action android:name="android.intent.action.SCREEN_ON" />
-                <action android:name="NOTIFICAR"/>
+                <action android:name="NOTIFICAR" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".Splash"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:noHistory="true">
+        <activity
+            android:name=".Splash"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Home"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
-<!--
+
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-                -->
+            -->
             <!--
                            <data android:host="details"
                                android:scheme="market"/>
@@ -58,7 +69,7 @@
                                android:pathPattern="/store/apps/details?id=com.far.gpseed"
                                android:scheme="https"/>
             -->
-                  <!--     </intent-filter> -->
+            <!-- </intent-filter> -->
 
             <intent-filter android:label="Gpseed">
                 <action android:name="android.intent.action.VIEW" />
@@ -84,7 +95,6 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Main"
             android:label="@string/app_name"
@@ -105,9 +115,8 @@
             android:name=".Map"
             android:label="@string/title_activity_map" />
         <activity android:name=".SeedMap" />
-
-        <activity android:name=".myCameraActivity"/>
-        <activity android:name=".Versiculos"/>
+        <activity android:name=".myCameraActivity" />
+        <activity android:name=".Versiculos" />
     </application>
 
 </manifest>

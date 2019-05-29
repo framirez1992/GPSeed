@@ -39,7 +39,9 @@ import org.jasypt.util.text.BasicTextEncryptor;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
@@ -110,6 +112,7 @@ public class Funciones {
     public static void createAllFolders(Context c){
         String rutaRaiz = Environment.getExternalStorageDirectory()+"/"+c.getResources().getString(R.string.folder_raiz);
         String rutaImagen = Environment.getExternalStorageDirectory()+"/"+c.getResources().getString(R.string.folder_Image);
+        String rutaImegenTemp =  Environment.getExternalStorageDirectory()+"/"+c.getResources().getString(R.string.folder_Image_temp);
         File raiz = new File(rutaRaiz);
         if(!raiz.exists()){
             raiz.mkdirs();
@@ -118,21 +121,33 @@ public class Funciones {
         if(!rutaImagenes.exists()){
             rutaImagenes.mkdirs();
         }
+        File rutaImagenesTemp = new File(rutaImegenTemp);
+        if(!rutaImagenesTemp.exists()){
+            rutaImagenesTemp.mkdirs();
+        }
+    }
+
+    public static String getImagenesTempFolder(Context c){
+       return   Environment.getExternalStorageDirectory()+"/"+c.getResources().getString(R.string.folder_Image_temp)+"/";
     }
     public static String getImagesFolder(Context c){
         String rutaImagen = Environment.getExternalStorageDirectory()+"/"+c.getResources().getString(R.string.folder_Image)+"/";
         return  rutaImagen;
     }
 
-    public static String getTempImageLocation(Context c){
-        String rutaImagen = Funciones.getImagesFolder(c)+"temp.jpg";
-        return  rutaImagen;
+    public static ArrayList<String> getTempImagesUrls(Context c){
+        ArrayList<String> urls = new ArrayList<>();
+        File tempFolder = new File(Funciones.getImagenesTempFolder(c));
+        for(File f: tempFolder.listFiles()){
+            urls.add(f.getAbsolutePath());
+        }
+        return  urls;
     }
 
     public static boolean existTempImage(Context c){
-        String rutaImagen = getTempImageLocation(c);
+        String rutaImagen = getImagenesTempFolder(c);
         File f = new File(rutaImagen);
-        return f.exists();
+        return f.list().length >0;
     }
 
     public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
@@ -156,10 +171,18 @@ public class Funciones {
 
         return output;
     }
-
+/*
     public static void setCircularImage(Context c,ImageView img) {
         String ruraImagen = getTempImageLocation(c);
         Picasso.with(c).load(Uri.fromFile(new File(ruraImagen)))
+                .memoryPolicy(MemoryPolicy.NO_CACHE )
+                .networkPolicy(NetworkPolicy.NO_CACHE)
+                .transform(new CircleTransformation()).fit().into(img);
+
+    }*/
+
+    public static void setCircularImage(Context c,File f, ImageView img) {
+        Picasso.with(c).load(Uri.fromFile(new File(f.getAbsolutePath())))
                 .memoryPolicy(MemoryPolicy.NO_CACHE )
                 .networkPolicy(NetworkPolicy.NO_CACHE)
                 .transform(new CircleTransformation()).fit().into(img);
@@ -192,12 +215,45 @@ public class Funciones {
          return result;
     }
 
+    public static File saveImage( Context context, byte[] capturedImage, String fileName) throws Exception{
+        createAllFolders(context);
+        File file = new File( Funciones.getImagenesTempFolder(context)+fileName+".jpg");
+        if(file.exists()) {
+            file.delete();
+        }
+
+            FileOutputStream outputStream = new FileOutputStream(file.getPath());
+            outputStream.write(capturedImage);
+            outputStream.close();
+            return file;
+    }
+
     public static boolean deleteImage(String url){
         File file = new File(url);
         if(file.exists()){
             return file.delete();
         }
         return false;
+    }
+
+    public static boolean deleteImage(ArrayList<String> urls){
+        boolean result = false;
+        for(String u: urls){
+            result =deleteImage(u);
+        }
+        return result;
+    }
+
+
+    public static boolean deleteTempImages(Context c){
+        File f = new File(getImagenesTempFolder(c));
+        File[] files = f.listFiles();
+        if(files != null && files.length>0){
+            for(File fi: files){
+                deleteImage(fi.getAbsolutePath());
+            }
+        }
+        return true;
     }
 
     public static float getPixelsFromDp(Context con, int dp){
@@ -214,6 +270,50 @@ public class Funciones {
         }
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.card);
         saveImage(context,bitmap,context.getResources().getString(R.string.name_Image_logo));
+
+    }
+
+    /**
+     *
+     * @param origin folder de origen
+     * @param destinyID id o nombre del nuevo del folder ubicado in Gpseed/images en donde se guardaran las imagenes
+     */
+    public static void cutAndPasteAll(Context c, String origin, String destinyID){
+        try {
+            File o = new File(origin);
+            File d = new File(getImagesFolder(c)+destinyID+"/");
+            if (!d.exists()) {
+                d.mkdirs();
+            }
+            File[] allFiles = o.listFiles();
+            int counter =0;
+            for (File f : allFiles) {
+                InputStream in = new FileInputStream(f.getAbsolutePath());
+                try {
+                    OutputStream out = new FileOutputStream(new File(d.getAbsolutePath()+"/"+counter+".jpg"));
+                    try {
+                        // Transfer bytes from in to out
+                        byte[] buf = new byte[1024];
+                        int len;
+                        while ((len = in.read(buf)) > 0) {
+                            out.write(buf, 0, len);
+                        }
+                    } finally {
+                        out.close();
+                    }
+                } finally {
+                    in.close();
+                }
+
+                counter++;
+            }
+
+            for(File f : allFiles){
+                f.delete();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 

@@ -1,7 +1,7 @@
 package com.far.gpseed.Models;
 
 /**
- * Created by mdsoft on 6/1/2017.
+ * Created by framirez on 6/1/2017.
  */
 
 public class CV {

@@ -12,7 +12,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Created by mdsoft on 7/26/2017.
+ * Created by framirez on 7/26/2017.
  */
 
 public class AlarmManager {

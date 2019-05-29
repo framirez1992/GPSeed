@@ -3,6 +3,7 @@
     <string name="passEncryption" translatable="false">framirez1234</string>
     <string name="folder_raiz" translatable="false">Gpseed</string>
     <string name="folder_Image" translatable="false">Gpseed/Images</string>
+    <string name="folder_Image_temp" translatable="false">Gpseed/Images/Temp</string>
     <string name="name_Image_temp" translatable="false">temp</string>
     <string name="name_Image_logo" translatable="false">logo</string>
     <string name="send_to" translatable="false">com.whatsapp</string>
@@ -119,7 +120,11 @@
     <string name="photo">Photo</string>
     <string name="save">Save</string>
     <string name="location_name">Location name</string>
+    <string name="location_description">Location description</string>
     <string name="new_seed">New seed</string>
+    <string name="alert">Alert</string>
+    <string name="confirm">Confirm</string>
+    <string name="msgExistingPhoto">If you perform this operation, recently captured photos will be erased.</string>
     <string name="back">Back</string>
     <string name="msg_saved">Saved successfully</string>
     <string name="more">More</string>
@@ -144,4 +149,5 @@
     <string name="msg_permissonsviewimagen">You must accept the permissions to view images</string>
     <string name="msg_nogooglemap">You do not have Google Map yet. Download it and try again</string>
     <string name="exit">Exit</string>
+
 </resources>
