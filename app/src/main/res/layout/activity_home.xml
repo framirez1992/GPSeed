@@ -241,13 +241,9 @@
             android:visibility="gone">
 
 
-            <GridView android:id="@+id/gvMySeeds"
+            <android.support.v7.widget.RecyclerView android:id="@+id/gvMySeeds"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:numColumns="auto_fit"
-                android:columnWidth="100dp"
-                android:verticalSpacing="10dp"
-                android:horizontalSpacing="10dp"/>
+                android:layout_height="match_parent"/>
 
 
             </LinearLayout>
